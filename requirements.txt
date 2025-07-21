@@ -1,0 +1,6 @@
+vllm
+arxiv
+sentence-transformers
+transformers
+openai
+termcolor
