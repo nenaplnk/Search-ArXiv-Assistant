@@ -1,8 +1,8 @@
-!python3 -m vllm.entrypoints.openai.api_server \
-    --model Qwen/Qwen2-7B-Instruct-GPTQ \
-    --quantization gptq \
+
+    !python3 -m vllm.entrypoints.openai.api_server \
+    --model Qwen/Qwen2-7B-Instruct \
     --host 0.0.0.0 \
     --port 8000 \
-    --max-model-len 512 \
-    --gpu-memory-utilization 0.7 \
-    --download-dir /content/models 2>&1 | tee /content/vllm.log
+    --max-model-len 2048 \
+    --download-dir /content/models \
+    --trust-remote-code
