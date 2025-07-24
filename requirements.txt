@@ -1,0 +1,7 @@
+vllm
+sentence-transformers
+transformers
+openai
+termcolor
+arxiv
+scikit-learn
