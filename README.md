@@ -22,17 +22,24 @@ pip install -r requirements.txt
 python main.py
 ```
 2. Start vllm server (file sc.sh)
+
    ```bash
    python3 -m vllm.entrypoints.openai.api_server \
-    --model Qwen/Qwen2-7B-Instruct \
+    --model Qwen/Qwen3-4B \
     --host 0.0.0.0 \
     --port 8000 \
-    --max-model-len 2048 \
-    --tensor-parallel-size 1
+    --max-model-len 8192 \
+    --tensor-parallel-size 1 \
+    --gpu-memory-utilization 0.9 \
+    --download-dir "/content/models" > /content/vllm_debug.log 2>&1 &
    ```
 4. Run the assistant
    ```bash
    python main.py
+   ```
+5. Run the benchmark
+   ```bash
+   python benchmark.py
    ```
 5. Example interactions
    💬 Ваш запрос: machine learning
