@@ -293,8 +293,8 @@ class ArXivAssistant:
         paper_info = [f"{p.title} {p.summary}" for p in papers]
         scores = self.reranker.predict([(query, text) for text in paper_info])
         ranked_papers = [p for _, p in sorted(zip(scores, papers), reverse=True)]
-        self.session_memory['last_papers'] = ranked_papers[:top_k]  # <- Сохраняем!
-        return ranked_papers[:top_k]  # <- Возвращаем для использования в run()
+        self.session_memory['last_papers'] = ranked_papers[:top_k]  
+        return ranked_papers[:top_k]  
 
     def format_results(self, papers: list) -> str:
         """Форматирование результатов"""
